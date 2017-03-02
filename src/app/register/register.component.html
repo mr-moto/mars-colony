@@ -1,0 +1,17 @@
+<div class='register'>
+  <h1>Register</h1>
+    <form [formGroup]='registerForm'>
+      <fieldset>
+        <input type="text" placeholder="Name" required  formControlName='name' name="name">
+        <input type="number" placeholder="Age" required  formControlName='age' name="age">
+        <select required  formControlName='job_id' name="job_id">
+            <option value="">Select occupation</option>
+            <option *ngFor='let job of marsJobs' value="{{ job.id }}">{{job.name}}</option>
+        </select>
+      </fieldset>
+      <button type="button" (click)="logColonist()">Log Colonist</button>
+      <fieldset>
+          <button class="button">Check in</button>
+      </fieldset>
+    </form>
+</div>

@@ -1,0 +1,61 @@
+.report{
+    background: #000;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    h1{
+        text-align: center;
+        padding: 2rem 1rem;
+        font-weight: 100;
+        color: #fff;
+        span{
+            display: block;
+            font-size: 1rem;
+        }
+    }
+    .report-form{
+        display: flex;
+        flex-direction: column;
+        flex: 4;
+        padding: 0 2rem;
+        fieldset{
+            flex: 1;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+        .select-wrap{
+            border-bottom: 1px solid #fff;
+        }
+        select{
+            font-size: 1rem;
+            font-family: 'Roboto';
+            color: #ed4343;
+            border: none;
+            background: 0 0;
+            padding: 0.5rem;
+        }
+        textarea{
+            width: 100%;
+            border: none;
+            font-size: 1rem;
+            line-height: 1rem;
+            font-family: inherit;
+            margin-top: 1rem;
+        }
+        textarea::placeholder{
+            color: #ed4343;
+        }
+        .button{
+            width: 100%;
+            font-family: 'Roboto';
+            color: #fff;
+            padding: 1rem 2rem;
+            background: #000;
+            font-weight: 100;
+            font-size: 2rem;
+            border: 0;
+        }
+    }
+}

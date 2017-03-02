@@ -1,0 +1,67 @@
+.register{
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    form{
+        padding: 0 2rem;
+        display: flex;
+        flex-direction: column;
+        flex: 4;
+        fieldset{
+            display: flex;
+            flex-direction: column;
+            border: none;
+            flex: 1;
+        }
+        input{
+            border: none;
+            border-bottom: 1px solid #fff;
+            box-shadow: none;
+            height: 2rem;
+            font-size: 1rem;
+            background: 0 0;
+            margin-bottom: 1.5rem;
+            width: 100%;
+            
+        }
+        input::placeholder{
+            color: #ed4343;
+  
+        }
+        .occupation{
+            font-size: 1rem;
+            line-height: 2rem;
+            padding-left: .5rem;
+            font-family: 'Roboto';
+            border-bottom: 1px solid #fff;
+        }
+        select{
+            background: 0 0;
+            border: none;
+            color: #ed4343;
+            width: 100%;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #fff;
+        }
+    } //----.form
+    h1{
+        color: white;   
+        font-weight: 100;
+        text-align: center;
+    }
+    .button{
+        width: 100%;
+        font-family: 'Roboto';
+        color: #fff;
+        font-weight: 100;
+        font-size: 2rem;
+    }
+    .info {
+        width: 100%;
+        p{
+            color: red;
+            border-bottom: 1px solid grey;
+        }
+    }
+}
