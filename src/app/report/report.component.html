@@ -3,12 +3,12 @@
   <form [formGroup]='reportForm'>
     <fieldset>
       <div class='select-wrap'>
-        <select name="alien-type" id="">
+        <select name="alientype" id="" formControlName='alientype'>
           <option value="">Select alien type</option>
           <option *ngFor='let alien of marsAliens' value="{{ alien.type }}">{{alien.type}}</option>
         </select>
       </div>
-      <textarea placeholder='Action Taken' required name="report" cols="30" rows="10"></textarea>
+      <textarea placeholder='Action Taken' formControlName='textarea' name='textarea' cols="30" rows="10"></textarea>
     </fieldset>
     <button type="button" (click)="logEncounter()">Log Encounter</button>
     <fieldset>
