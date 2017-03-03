@@ -6,6 +6,7 @@ import { COLONISTS_URL, JOBS_URL}  from '../models/API';
 
 import { ColonistAPIService } from '../apiService/colonists';
 import { JobsAPIService } from '../apiService/jobs';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -21,7 +22,8 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private colonistApiService: ColonistAPIService,
-    private jobsAPIService: JobsAPIService
+    private jobsApiService: JobsAPIService,
+    private router: Router
     ) { 
     //TODO: call api, get jobs
     
@@ -51,7 +53,7 @@ export class RegisterComponent implements OnInit {
     }
 
   getMarsJobs() {
-    this.jobsAPIService.getMarsJobs().subscribe((result) => {
+    this.jobsApiService.getMarsJobs().subscribe((result) => {
       this.marsJobs = result;
     })
   }
@@ -68,6 +70,8 @@ export class RegisterComponent implements OnInit {
       const newColonist = new NewColonist(name, age, job_id);
 
       this.colonistApiService.saveColonist({ colonist: newColonist }).subscribe((result) => {
+        localStorage.setItem("colonist_id", JSON.stringify(result.id));
+        this.router.navigate(['/encounters']);
         console.log('Colonist was saved:', result);
       });
 

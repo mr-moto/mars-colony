@@ -15,12 +15,12 @@ export class NewColonist{
     }
 }
 
-export class NewEncounter {
+export class NewEncounter{
     atype: string;
     date: string;
     action: string;
     colonist_id: string;
-    Constructor(atype: string, date: string, action: string, colonist_id: string){
+    constructor(atype: string, date: string, action: string, colonist_id: string){
         this.atype = atype;
         this.date = date;
         this.action = action;

@@ -19,7 +19,6 @@ export class ColonistAPIService {
     saveColonist(newColonist: ColonistPostRequest): Observable<Colonist> {
         const headers = new Headers();
         headers.append('Content-Type', 'application/json')
-        return this.http.post(COLONISTS_URL, newColonist, { headers })
-                .map((res: Response) => res.json().colonist);
+        return this.http.post(COLONISTS_URL, newColonist, { headers }).map((res: Response) => res.json().colonist);
     }
 }

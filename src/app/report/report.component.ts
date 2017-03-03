@@ -2,15 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { NewEncounter, Alien} from '../models'
 import { FormGroup, FormControl, FormBuilder, Validators,ValidatorFn,  AbstractControl } from '@angular/forms';
 
-import { ALIENS_URL}  from '../models/API';
+import { ALIENS_URL, ENCOUNTERS_URL}  from '../models/API';
 
 import { AliensAPIService } from '../apiService/aliens';
+import { EncounterAPIService } from '../apiService/encounters';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-report',
   templateUrl: './report.component.html',
   styleUrls: ['./report.component.scss'],
-  providers: [AliensAPIService]
+  providers: [AliensAPIService, EncounterAPIService]
 })
 export class ReportComponent implements OnInit {
   marsAliens: Alien [];
@@ -18,14 +20,16 @@ export class ReportComponent implements OnInit {
 
   constructor(
     private aliensApiService: AliensAPIService,
+    private encounterApiService: EncounterAPIService,
+    private router: Router
   ) { 
 
 
     this.getMarsAliens();
 
     this.reportForm = new FormGroup ({ 
-      textarea: new FormControl('', [Validators.required]),
-      alientype: new FormControl('', [Validators.required])
+      action: new FormControl('', [Validators.required]),
+      atype: new FormControl('', [Validators.required])
     })
   }
 
@@ -42,4 +46,31 @@ logEncounter(){
     })
   }
 
+
+
+ private getDate(){
+      const d  = new Date();
+      return `${d.getFullYear()} - ${d.getMonth() + 1} - ${d.getDate()}`;
+  }
+
+
+
+  postNewEncounter(event) {
+      event.preventDefault();
+      console.log('button working?');
+      if(this.reportForm.invalid){
+        // the form is invalid...
+      }else{
+        const atype = this.reportForm.get('atype').value;
+        const date = this.getDate();
+        const action = this.reportForm.get('action').value;
+        const colonist_id = localStorage.getItem("colonist_id");
+        const newEncounter = new NewEncounter(atype, date, action, colonist_id);
+        
+        this.encounterApiService.saveEncounter({ encounter: newEncounter }).subscribe((result) => {
+          this.router.navigate(['/encounters']);
+          console.log('Encounter was saved:', result);
+        });
+      }
+    }
 }
