@@ -10,7 +10,7 @@ Users fill out forms which will post to these APIs which can later be retrieved(
 Using Angular to create a single page application as well as further understanding of getting and posting from APIs.
 
 ## Implementations
-* Hot Module Reload for faster workflow (npm run hmr)
+* Hot Module Reload for faster workflow (`npm run hmr`)
 * Get/Post JSON data
 * Form Validation
 * Home screen animations (modified codepen animations from users theSLY and Aleks)
