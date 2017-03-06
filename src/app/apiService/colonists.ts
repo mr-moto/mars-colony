@@ -16,6 +16,7 @@ export class ColonistAPIService {
 
     constructor(private http: Http){}
 
+
     saveColonist(newColonist: ColonistPostRequest): Observable<Colonist> {
         const headers = new Headers();
         headers.append('Content-Type', 'application/json')

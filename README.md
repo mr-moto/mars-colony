@@ -1,9 +1,31 @@
 # MarsColony
+![main image] (screenshot/mars-screenshot.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.0.
 
+## Project Goals
+Users fill out forms which will post to these APIs which can later be retrieved('get') and viewed.
+
+## Learnings
+Using Angular to create a single page application as well as further understanding of getting and posting from APIs.
+
+## Implementations
+* Hot Module Reload for faster workflow (npm run hmr)
+* Get/Post JSON data
+* Form Validation
+* Home screen animations (modified codepen animations from users theSLY and Aleks)
+* Colonist object data stored in local storage
+
+## TODO
+* implement ngif if necessary(?)
+* router transition animations
+* make it more prettier 
+* WordPress integration with WP REST API (v2)
+* integrate mars map as background 
+* implement 'loading' for inbetween loading phases
+
 ## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` or `npm run hmr`(for hot modular reload) for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
