@@ -3,14 +3,15 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    h1{
+    .heading{
         text-align: center;
         padding: 2rem 1rem;
         font-weight: 100;
         color: #fff;
+        font-size: 2.3rem;
         span{
             display: block;
-            font-size: 1rem;
+            font-size: 1.2rem;
         }
     }
     form{
@@ -29,7 +30,7 @@
             border-bottom: 1px solid #fff;
         }
         select{
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-family: 'Roboto';
             color: #ed4343;
             border: none;
@@ -39,7 +40,7 @@
         textarea{
             width: 100%;
             border: none;
-            font-size: 1rem;
+            font-size: 1.1rem;
             line-height: 1rem;
             font-family: inherit;
             margin-top: 1rem;
@@ -54,7 +55,7 @@
             padding: 1rem 2rem;
             background: #000;
             font-weight: 100;
-            font-size: 2rem;
+            font-size: 2.3rem;
             border: 0;
         }
     }

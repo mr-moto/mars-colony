@@ -3,6 +3,12 @@
     background-color: #000;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    .header{
+        padding: 2rem 1rem;
+        font-size: 2.3rem;
+        text-align: center;
+    }
     form{
         padding: 0 2rem;
         display: flex;
@@ -10,14 +16,12 @@
         flex: 4;
         fieldset{
             display: flex;
-            flex-direction: column;
-            border: none;
             flex: 1;
         }
         input{
             border: none;
             border-bottom: 1px solid #fff;
-            box-shadow: none;
+            color: #ed4343;
             height: 2rem;
             font-size: 1rem;
             background: 0 0;
@@ -36,27 +40,24 @@
             font-family: 'Roboto';
             border-bottom: 1px solid #fff;
         }
+        .select-wrapper{
+            border-bottom: 1px solid #fff;
+        }
         select{
             background: 0 0;
             border: none;
             color: #ed4343;
             width: 100%;
             font-size: 1.1rem;
-            border-bottom: 1px solid #fff;
-            
+            height: 2rem;
         }
     } //----.form
-    h1{
-        color: white;   
-        font-weight: 100;
-        text-align: center;
-    }
     button{
         width: 100%;
         font-family: 'Roboto';
         color: #fff;
         font-weight: 100;
-        font-size: 2rem;
+        font-size: 2.3rem;
     }
     .info {
         width: 100%;
@@ -64,5 +65,21 @@
             color: red;
             border-bottom: 1px solid grey;
         }
+    }
+}
+.submitting{
+    input.ng-invalid{
+        animation: invalid 0.5s infinite;
+    }
+    select.ng-invalid{
+        animation: invalid 0.5s infinite;
+    }
+}
+@keyframes invalid{
+    0%{
+        box-shadow: 0 0 0 0rem rgba(248, 67, 67,.7);
+    }
+    100%{
+        box-shadow: 0 0 0 0.7rem rgba(248, 67, 67,0);
     }
 }

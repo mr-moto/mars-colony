@@ -1,18 +1,20 @@
 <div class='register'>
-<h1>Register</h1>
+<h1 class='header'>Register</h1>
     <form   [formGroup]='registerForm' 
             (ngSubmit)="postNewColonist($event)"
-            [ngClass]="{'submitting': submitting}">
+            [ngClass]="{'submitting': clickedButton}">
     <fieldset>
         <input type="text" placeholder="Name"  formControlName='name' name="name">
         <input type="number" placeholder="Age"  formControlName='age' name="age">
-        <select  formControlName='job_id' name="job_id">
-            <option value="">Select occupation</option>
-            <option *ngFor='let job of marsJobs' value="{{ job.id }}">{{job.name}}</option>
-        </select>
+        <div class="select-wrapper">
+            <select  formControlName='job_id' name="job_id">
+                <option value="">Select occupation</option>
+                <option *ngFor='let job of marsJobs' value="{{ job.id }}">{{job.name}}</option>
+            </select>
+        </div>        
     </fieldset>
     <fieldset>
-        <button>Check in</button>
+        <button type="submit">Check in</button>
     </fieldset>
     </form>
 </div>

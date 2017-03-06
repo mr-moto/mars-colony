@@ -16,7 +16,7 @@ export class EncounterAPIService {
 
     constructor(private http: Http){}
 
-    getEncountersJobs(): Observable<Encounter[]> {
+    getMarsEncounters(): Observable<Encounter[]> {
         return this.http.get(ENCOUNTERS_URL).map((res: Response) => res.json().encounters)
     }
 

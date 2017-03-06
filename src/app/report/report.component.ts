@@ -17,6 +17,7 @@ import { Router } from '@angular/router';
 export class ReportComponent implements OnInit {
   marsAliens: Alien [];
   reportForm: FormGroup;
+  clickedButton: boolean;
 
   constructor(
     private aliensApiService: AliensAPIService,
@@ -26,6 +27,8 @@ export class ReportComponent implements OnInit {
 
 
     this.getMarsAliens();
+
+    this.clickedButton = false;
 
     this.reportForm = new FormGroup ({ 
       action: new FormControl('', [Validators.required]),
@@ -58,6 +61,7 @@ logEncounter(){
   postNewEncounter(event) {
       event.preventDefault();
       console.log('button working?');
+      this.clickedButton = true;
       if(this.reportForm.invalid){
         // the form is invalid...
       }else{

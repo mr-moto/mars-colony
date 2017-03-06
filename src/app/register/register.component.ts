@@ -19,6 +19,7 @@ export class RegisterComponent implements OnInit {
 
   marsJobs: Job[];
   registerForm: FormGroup;
+  clickedButton: boolean;
 
   constructor(
     private colonistApiService: ColonistAPIService,
@@ -29,15 +30,17 @@ export class RegisterComponent implements OnInit {
     
     this.getMarsJobs();
 
+    this.clickedButton = false;
+
     this.registerForm = new FormGroup ({ 
-      name: new FormControl('', [Validators.required, Validators.maxLength(100)]), 
-      age: new FormControl('', [Validators.required, this.AcceptAge(18,50)]), 
-      job_id: new FormControl('', [Validators.required]), 
+      name: new FormControl('', [Validators.required, Validators.maxLength(100)]),
+      age: new FormControl('',[Validators.required, this.acceptAge(18, 50)]),
+      job_id: new FormControl('',[Validators.required])
     });
 
   }
 
-  AcceptAge(min: number, max: number){
+  acceptAge(min: number, max: number){
     return (control: AbstractControl): {[key: string]: any} => {
       if(control.value < min || control.value > max) {
         return { 'Sorry good luck' : { age: control.value }};
@@ -60,7 +63,9 @@ export class RegisterComponent implements OnInit {
 
   postNewColonist(event) {
     event.preventDefault();
-    if(!this.registerForm.invalid){
+    this.clickedButton = true;
+
+    if(this.registerForm.invalid){
       // the form is invalid...
     }else{
       const name = this.registerForm.get('name').value;
